@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.homework.mapper.HotTopicMapper">
+
+    <select id="queryHotTopicList" resultType="HotTopic">
+        select * from hot_topic
+    </select>
+
+    <select id="queryHotTopicById" resultType="HotTopic">
+        select * from hot_topic where topic_id = #{topic_id}
+    </select>
+
+    <insert id="addHotTopic" parameterType="HotTopic">
+        insert into hot_topic (topic_id, topic_name, positive_value, negative_value) VALUES (#{topic_id}, #{topic_name}, #{positive_value}, #{negative_value});
+    </insert>
+
+    <update id="updateHotTopic" parameterType="int">
+        update hot_topic set positive_value = #{positive_value}, negative_value = #{negative_value} where topic_id = #{topic_id}
+    </update>
+
+</mapper>

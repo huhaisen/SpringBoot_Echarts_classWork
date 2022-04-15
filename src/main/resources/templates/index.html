@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>全国疫情舆情分析</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/index.css">
+
+    <script src="./js/jquery-2.2.1.min.js"></script>
+    <script src="./js/echarts.js"></script>
+    <script src="./js/echarts.min.js"></script>
+    <script src="./js/echarts-wordcloud.min.js"></script>
+    <!--引入在线的中国地图库，要注意可能会失效-->
+    <script src="https://cdn.jsdelivr.net/npm/echarts/map/js/china.js?v=1598903772045" charset="utf-8"></script>
+
+
+
+
+    <style>
+        .t_title{
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-size: 2.5em;
+            line-height: 80px;
+            color: #fff;
+        }
+        #chart_map{
+            cursor: pointer;
+        }
+        .t_show{
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-radius: 2px;
+            background: #2C58A6;
+            padding: 2px 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+
+
+</head>
+<body>
+
+<!--header-->
+<div class="header">
+    <div class="bg_header">
+        <div class="header_nav fl t_title">
+            全国疫情舆情分析平台
+        </div> 
+    </div>
+</div>
+
+<!--main-->
+<div class="data_content">
+
+
+
+    <div class="data_main">
+
+
+
+        <!--left-->
+        <div class="main_left fl">
+            <div class="left_1 t_btn6" style="cursor: pointer;">
+                <div class="t_line_box">
+                    <i class="t_l_line"></i>
+                    <i class="l_t_line"></i>
+                </div>
+                <div class="t_line_box">
+                    <i class="t_r_line"></i>
+                    <i class="r_t_line"></i>
+                </div>
+                <div class="t_line_box">
+                    <i class="l_b_line"></i>
+                    <i class="b_l_line"></i>
+                </div>
+                    <div class="t_line_box">
+                        <i class="r_b_line"></i>
+                        <i class="b_r_line"></i>
+                    </div>
+                <div class="main_title">
+                    <img src="./img/t_1.png" alt="">
+                  热搜话题情感分析
+                </div>
+                <div id="chart_1" class="chart" style="width:100%;height: 280px;"></div>
+                <script src="./js/echarts_js/情感分析radar.js"></script>
+            </div>
+
+            <div class="left_2" style="cursor: pointer;">
+                <div class="t_line_box">
+                    <i class="t_l_line"></i>
+                    <i class="l_t_line"></i>
+                </div>
+                <div class="t_line_box">
+                    <i class="t_r_line"></i>
+                    <i class="r_t_line"></i>
+                </div>
+                <div class="t_line_box">
+                    <i class="l_b_line"></i>
+                    <i class="b_l_line"></i>
+                </div>
+                    <div class="t_line_box">
+                    <i class="r_b_line"></i>
+                    <i class="b_r_line"></i>
+                </div>
+                <div class="main_title">
+                    <img src="./img/t_2.png" alt="">
+                    男女比例分布
+                </div>
+                <div id="chart_2" class="chart t_btn9" style="width:100%;height: 280px;"></div>
+
+                <!--男女比例分布图-->
+                <script src="./js/echarts_js/男女比例分布pie.js"></script>
+            </div>
+        </div>
+
+
+        <!--center-->
+        <div class="main_center fl">
+            <div class="center_text">
+                <div class="t_line_box">
+                    <i class="t_l_line"></i>
+                    <i class="l_t_line"></i>
+                </div>
+                <div class="t_line_box">
+                    <i class="t_r_line"></i>
+                    <i class="r_t_line"></i>
+                </div>
+                <div class="t_line_box">
+                    <i class="l_b_line"></i>
+                    <i class="b_l_line"></i>
+                </div>
+                 <div class="t_line_box">
+                    <i class="r_b_line"></i>
+                    <i class="b_r_line"></i>
+                </div>
+                <div class="main_title">
+                    <img src="./img/t_3.png" alt="">
+                    全国累计舆情数量分布图
+                </div>
+                <div id="chart_map" style="width:100%;height:610px;"></div>
+                <script src="./js/echarts_js/mapChina.js"></script>
+            </div>
+        </div>
+
+        <!--right-->
+        <div class="main_right fr">
+            <div class="right_1">
+                <div class="t_line_box">
+                    <i class="t_l_line"></i>
+                    <i class="l_t_line"></i>
+                </div>
+                <div class="t_line_box">
+                    <i class="t_r_line"></i>
+                    <i class="r_t_line"></i>
+                </div>
+                <div class="t_line_box">
+                    <i class="l_b_line"></i>
+                    <i class="b_l_line"></i>
+                </div>
+                    <div class="t_line_box">
+                    <i class="r_b_line"></i>
+                    <i class="b_r_line"></i>
+                </div>
+                <div class="main_title">
+                    <img src="./img/t_4.png" alt="">
+                    全国疫情词云
+                </div>
+                <div id="chart_3" class="echart t_btn7" style="width:100%;height: 100%;"></div>
+                <!--引入词云-->
+                <script src="./js/echarts_js/wordcloud.js"></script>
+            </div>
+            <div class="right_2">
+                <div class="t_line_box">
+                    <i class="t_l_line"></i>
+                    <i class="l_t_line"></i>
+                </div>
+                <div class="t_line_box">
+                    <i class="t_r_line"></i>
+                    <i class="r_t_line"></i>
+                </div>
+                <div class="t_line_box">
+                    <i class="l_b_line"></i>
+                    <i class="b_l_line"></i>
+                </div>
+                <div class="t_line_box">
+                    <i class="r_b_line"></i>
+                    <i class="b_r_line"></i>
+                </div>
+                <div class="main_title">
+                    <img src="./img/t_5.png" alt="">
+                    高频词排行榜
+                </div>
+                <div id="chart_4" class="echart fl t_btn4" style="width:100%;height: 100%;cursor: pointer;"></div>
+                <script src="./js/echarts_js/高频词排行bar.js"></script>
+            </div>
+        </div>
+
+        <!--bottom-->
+        <div class="data_bottom" style="margin-top: 100px">
+
+            <!--bottom1-->
+            <div class="bottom_1 fl t_btn5" style="cursor: pointer;width: 715px;height: auto;margin-top: 50px">
+                <div class="t_line_box">
+                    <i class="t_l_line"></i>
+                    <i class="l_t_line"></i>
+                </div>
+                <div class="t_line_box">
+                    <i class="t_r_line"></i>
+                    <i class="r_t_line"></i>
+                </div>
+                <div class="t_line_box">
+                    <i class="l_b_line"></i>
+                    <i class="b_l_line"></i>
+                </div>
+                <div class="t_line_box">
+                    <i class="r_b_line"></i>
+                    <i class="b_r_line"></i>
+                </div>
+                <div class="main_title">
+                    <img src="./img/t_6.png" alt="">
+                    近十五天网民关注度
+                </div>
+                <div id="chart_5" class="echart fl" style="width:100%;height: 320px;margin-top: 15px;"></div>
+                <script src="./js/echarts_js/进十五天关注度line.js"></script>
+            </div>
+
+            <div class="bottom_1 fl t_btn5" style="cursor: pointer;width: 715px;height: auto;margin-top: 50px">
+                <div class="t_line_box">
+                    <i class="t_l_line"></i>
+                    <i class="l_t_line"></i>
+                </div>
+                <div class="t_line_box">
+                    <i class="t_r_line"></i>
+                    <i class="r_t_line"></i>
+                </div>
+                <div class="t_line_box">
+                    <i class="l_b_line"></i>
+                    <i class="b_l_line"></i>
+                </div>
+                <div class="t_line_box">
+                    <i class="r_b_line"></i>
+                    <i class="b_r_line"></i>
+                </div>
+                <div class="main_title">
+                    <img src="./img/t_6.png" alt="">
+                    舆情数量前十省详情
+                </div>
+                <div id="chart_6" class="echart fl" style="width:100%;height: 320px;margin-top: 15px;"></div>
+                <script src="./js/echarts_js/舆情数量前十省bar.js"></script>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+ 
+</body>
+
+</html>
